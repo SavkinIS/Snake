@@ -17,7 +17,9 @@ public class ChangeColor : MonoBehaviour
             item.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);         
             ParticleSystem.MainModule psMain = item.main;
             psMain.startColor = new ParticleSystem.MinMaxGradient(color, color);
+            item.startColor = color;
             item.Play(true);
+            print(color.ToString());
         }
 
         Material material = GetComponent<MeshRenderer>().material;

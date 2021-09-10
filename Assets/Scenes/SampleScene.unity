@@ -588,7 +588,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.23
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -600,7 +600,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.57
-    m_NearPlane: 0.2
+    m_NearPlane: 0.59
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -630,13 +630,13 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 1.01
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 56.8
+  m_ShadowAngle: 58.7
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -2316,6 +2316,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxDist
       value: 3.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626037458261787508, guid: 2f79839e48372c24dafe5a009d8a3158,
+        type: 3}
+      propertyPath: m_Depth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626037458261787508, guid: 2f79839e48372c24dafe5a009d8a3158,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5626037458261787511, guid: 2f79839e48372c24dafe5a009d8a3158,
         type: 3}
