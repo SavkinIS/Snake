@@ -7,12 +7,12 @@ public class ChangeColor : MonoBehaviour
 {
     Color color;
 
-    [SerializeField] ParticleSystem[] particles;
+    [SerializeField] ParticleSystem[] particlesFountains;
 
     void Start()
     {
         color = transform.parent.GetComponent<ColorPath>().GetColorGood;
-        foreach (var item in particles)
+        foreach (var item in particlesFountains)
         {
             item.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);         
             ParticleSystem.MainModule psMain = item.main;
@@ -23,13 +23,6 @@ public class ChangeColor : MonoBehaviour
         Material material = GetComponent<MeshRenderer>().material;
         material.color = color;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider colider)
     {
         if(colider.TryGetComponent<MoveHead>(out MoveHead snake))

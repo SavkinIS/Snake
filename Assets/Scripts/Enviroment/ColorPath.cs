@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A segment with an environment
+/// </summary>
 public class ColorPath : MonoBehaviour
 {
 
@@ -41,13 +44,11 @@ public class ColorPath : MonoBehaviour
         transform.parent = FindObjectOfType<CreateEnviroment>().transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
+    /// <summary>
+    /// Create a series of environments
+    /// </summary>
     void CreateRow()
     {
         Row row = Instantiate(rowPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + distanceZ), Quaternion.identity, transform);

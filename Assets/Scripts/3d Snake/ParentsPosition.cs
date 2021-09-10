@@ -5,7 +5,10 @@ using UnityEngine;
 
 namespace NewSnake
 {
-    public class PerentsPosirion : MonoBehaviour
+    /// <summary>
+    /// Mounting position for the tail part to the previous element
+    /// </summary>
+    public class ParentsPosition : MonoBehaviour
     {
         [Range (0.1f, 5f)]
         [SerializeField] float maxDist;
@@ -16,7 +19,6 @@ namespace NewSnake
         Transform parentsTail;
 
         float timer;
-        // Start is called before the first frame update
         void Start()
         {
             timer = 0.1f;

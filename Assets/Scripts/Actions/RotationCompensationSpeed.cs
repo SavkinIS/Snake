@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// Компенсирует отставание при повороте головы змеи
+/// Compensates for the lag when turning the snake's head
 /// </summary>
 public class RotationCompensationSpeed : Move 
 { 

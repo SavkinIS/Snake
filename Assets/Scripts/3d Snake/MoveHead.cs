@@ -11,7 +11,7 @@ namespace NewSnake {
 
 		[Tooltip("Точки креплнния деталей хвоста к вышестоящей части")]
 		[SerializeField]
-		List<PerentsPosirion> parentsPosirions = new List<PerentsPosirion>();
+		List<ParentsPosition> parentsPosirions = new List<ParentsPosition>();
 
         [Tooltip("Точки для вращения головой")]
         [SerializeField] Transform[] points;
@@ -352,7 +352,7 @@ namespace NewSnake {
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-		public int GetIndexInTail(PerentsPosirion item)
+		public int GetIndexInTail(ParentsPosition item)
 		{
 			return parentsPosirions.IndexOf(item);
 		}
@@ -362,7 +362,7 @@ namespace NewSnake {
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-		public PerentsPosirion GetParentTail(int index)
+		public ParentsPosition GetParentTail(int index)
 		{
 			return parentsPosirions[index];
 		}
@@ -373,7 +373,7 @@ namespace NewSnake {
         /// </summary>
         /// <param name="tail"></param>
         /// <returns></returns>
-		Material GetTailMaterial(PerentsPosirion tail)
+		Material GetTailMaterial(ParentsPosition tail)
         {
 			return tail.GetComponent<MeshRenderer>().material;
         }

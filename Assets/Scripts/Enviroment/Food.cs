@@ -16,7 +16,6 @@ public class Food : MonoBehaviour
         manager = FindObjectOfType<GameManager>();
     }
 
-
     /// <summary>
     /// Изменит цвет всем дочерним элементам
     /// </summary>
@@ -28,7 +27,6 @@ public class Food : MonoBehaviour
             item.material.color = newcolor;
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {

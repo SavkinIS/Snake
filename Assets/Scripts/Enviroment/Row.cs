@@ -8,8 +8,11 @@ using UnityEngine;
 /// </summary>
 public class Row : MonoBehaviour
 {
+    [Tooltip("left Spawn Points")]
     [SerializeField] Transform leftSpawnPoints;
+    [Tooltip("center Spawn Points")]
     [SerializeField] Transform centerSpawnPoint;
+    [Tooltip("right Spawn Points")]
     [SerializeField] Transform rightSpawnPoint;
 
     [SerializeField] Food food;
@@ -17,9 +20,18 @@ public class Row : MonoBehaviour
     [SerializeField] Obstacle obstacle;
     [SerializeField] Gem gem;
 
-
+    /// <summary>
+    /// Array with spawn Points
+    /// </summary>
     Transform[] transformPoints;
     ColorPath colorPath;
+
+    /// <summary>
+    /// side constants
+    /// </summary>
+    const int left = 0;
+    const int right = 1;
+    const int center = 2;
     void Awake()
     {
         transformPoints = new Transform[3];
@@ -30,11 +42,6 @@ public class Row : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     /// <summary>
     /// Создание еды
@@ -46,13 +53,13 @@ public class Row : MonoBehaviour
         int ind = Random.Range(0, 10);
         if(ind <= 5)
         {
-            CreateFood(food, 0, colorPath.GetColorGood);
-            CreateFood(badFood, 1, colorPath.GetColorBad);
+            CreateFood(food, left, colorPath.GetColorGood);
+            CreateFood(badFood, right, colorPath.GetColorBad);
         }
         else if(ind > 5)
         {
-            CreateFood(food, 1, colorPath.GetColorGood);
-            CreateFood(badFood, 0, colorPath.GetColorBad);
+            CreateFood(food, right, colorPath.GetColorGood);
+            CreateFood(badFood, left, colorPath.GetColorBad);
         }
     }
 
@@ -61,26 +68,26 @@ public class Row : MonoBehaviour
     /// </summary>
     internal void CreatObstacleAndGem()
     {
-        int ind = Random.Range(0, 3);
+        int ind = Random.Range(left, center+1);
         print(ind);
         if (ind == 0)
         {
-            CreateGem(0);
-            CreateObstacle(1);
-            CreateObstacle(2);
+            CreateGem(left);
+            CreateObstacle(right);
+            CreateObstacle(center);
         }
         else if (ind == 1)
         {
-            CreateObstacle(0);
-            CreateGem(1);
-            CreateObstacle(2);
+            CreateObstacle(left);
+            CreateGem(right);
+            CreateObstacle(center);
         }
 
         else if (ind == 2)
         {
-            CreateGem(2);
-            CreateObstacle(1);
-            CreateObstacle(0);
+            CreateGem(center);
+            CreateObstacle(right);
+            CreateObstacle(left);
         }
     }
 
